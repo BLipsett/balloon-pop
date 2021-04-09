@@ -1,0 +1,179 @@
+:root {
+  --primary: rgb(183, 107, 212);
+  --bg: rgb(224, 217, 217);
+  --shadow: rgba(0, 0, 0, 0.3);
+}
+
+body {
+  background-color: var(--bg);
+  font-family: "Train One", cursive;
+  font-size: 14pt;
+}
+
+header {
+  margin: 1em 0;
+}
+
+main {
+  width: 50%;
+  margin: auto;
+}
+img {
+  max-width: 100%;
+}
+
+button {
+  background-color: var(--primary);
+  border-radius: 6px;
+  border: none;
+  box-shadow: var(--shadow);
+  transition: all 0.4s linear;
+  cursor: pointer;
+  padding: 1em;
+}
+
+form {
+  margin: none;
+}
+input {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid;
+  outline: none;
+  font-size: 12pt;
+  font-family: "Times New Roman", Times, serif;
+}
+
+button:hover {
+  background-color: rgb(226, 180, 238);
+}
+.balloon {
+  height: 120px;
+  width: 100px;
+  background-color: blue;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+  animation: balloon-float 5s ease-in-out infinite;
+  align-self: flex-end;
+  margin: 0px auto;
+  box-shadow: inset -10px -10px 12px rgba(0, 0, 0, 0.5);
+}
+
+.balloon.green {
+  filter: hue-rotate(130deg);
+}
+.balloon.blue {
+  filter: hue-rotate(225deg);
+}
+.balloon.purple {
+  filter: hue-rotate(225deg);
+}
+.balloon.pink {
+  filter: hue-rotate(325deg);
+}
+
+.game-container {
+  height: 300px;
+}
+
+@keyframes balloon-float {
+  0%,
+  100% {
+    transform: translateY(-25px) rotate(5deg);
+  }
+  50% {
+    transform: translateY(0px) rotate(-5deg);
+  }
+}
+
+.pump {
+  height: 130px;
+  width: 180px;
+  position: relative;
+  margin-top: 80px;
+}
+
+.pump:active .handle {
+  top: -20px;
+}
+
+.handle {
+  height: 10px;
+  width: 80px;
+  background-color: gray;
+  position: absolute;
+  top: -80px;
+  left: 50px;
+  display: flex;
+  transition: all 0.05s linear;
+  justify-content: center;
+  z-index: 1;
+}
+
+.handle::before {
+  content: " ";
+  background-color: gray;
+  width: 10px;
+  height: 80px;
+  display: block;
+}
+
+.pump-box {
+  background-color: lightblue;
+  height: 130px;
+  width: 180px;
+  border-top-right-radius: 8px;
+  border-top-left-radius: 8px;
+  z-index: 2;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+}
+
+.pump-box span {
+  background-color: lightcoral;
+  padding: 0.5em;
+}
+
+.container {
+  width: 50%;
+  margin: auto;
+}
+
+.shadow {
+  filter: drop-shadow(2px 0 8px var(--shadow));
+}
+.card {
+  background-color: white;
+  padding: 1em;
+  box-shadow: 2px 0 8px var(--shadow);
+  border-radius: 6px;
+}
+
+.d-flex {
+  display: flex;
+  align-items: center;
+}
+
+.d-flex.space-between {
+  justify-content: space-between;
+}
+
+.d-flex.space-around {
+  justify-content: space-around;
+}
+.mt-2 {
+  margin-top: 1em;
+}
+
+.hidden {
+  display: none !important;
+}
+
+@media screen and (max-width: 700px) {
+  .container {
+    width: 85%;
+  }
+}
